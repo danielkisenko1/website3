@@ -337,7 +337,6 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<!-- Footer -->
 						<footer id="footer">
 						    <p class="copyright">just take one step everyday.</p>
-							<p></p>
 						    <p class="copyright" id="ottawa-time"></p>
 							<p class="copyright" id="ottawa-weather"></p>
 						</footer>
@@ -352,7 +351,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							    };
 							    const ottawaTime = new Intl.DateTimeFormat('en-CA', options).format(new Date());
 							    document.getElementById('ottawa-time').textContent =
-							        "Current time in Ottawa: " + ottawaTime;
+							        "Local Time: " + ottawaTime;
 							}
 							
 							async function fetchOttawaWeather() {
@@ -361,7 +360,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							        if (!res.ok) throw new Error('Weather fetch failed');
 							        const weatherText = await res.text();
 							        document.getElementById('ottawa-weather').textContent =
-							            "Current weather in Ottawa: " + weatherText;
+							            "Local Weather: " + weatherText;
 							    } catch (e) {
 							        document.getElementById('ottawa-weather').textContent = 'Weather unavailable';
 							        console.error(e);
@@ -388,6 +387,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
