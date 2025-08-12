@@ -338,22 +338,40 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						<footer id="footer">
 						    <p class="copyright">just take one step everyday.</p>
 						    <p class="copyright" id="ottawa-time"></p>
+							<p class="copyright" id="ottawa-weather"></p>
 						</footer>
 						
 							<script>
 							function updateOttawaTime() {
 							    const options = {
-							        timeZone: 'America/Toronto', // Ottawa timezone
+							        timeZone: 'America/Toronto',
 							        hour: '2-digit',
 							        minute: '2-digit',
 							        second: '2-digit'
 							    };
 							    const ottawaTime = new Intl.DateTimeFormat('en-CA', options).format(new Date());
-							    document.getElementById('ottawa-time').textContent = "Current time in Ottawa: " + ottawaTime;
+							    document.getElementById('ottawa-time').textContent =
+							        "Current time in Ottawa: " + ottawaTime;
 							}
 							
-							setInterval(updateOttawaTime, 1000);
+							async function fetchOttawaWeather() {
+							    try {
+							        const res = await fetch("https://wttr.in/Ottawa?format=%C+%t"); 
+							        if (!res.ok) throw new Error('Weather fetch failed');
+							        const weatherText = await res.text();
+							        document.getElementById('ottawa-weather').textContent =
+							            "Current weather in Ottawa: " + weatherText;
+							    } catch (e) {
+							        document.getElementById('ottawa-weather').textContent = 'Weather unavailable';
+							        console.error(e);
+							    }
+							}
+							
+							// Initialize
 							updateOttawaTime();
+							fetchOttawaWeather();
+							setInterval(updateOttawaTime, 1000);           // Update clock every second
+							setInterval(fetchOttawaWeather, 10 * 60 * 1000); // Refresh weather every 10 mins
 							</script>
 			</div>
 
@@ -369,6 +387,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
