@@ -340,25 +340,21 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 						    <p class="copyright" id="ottawa-time"></p>
 						</footer>
 						
-						<script>
-						function updateOttawaTime() {
-						    const options = {
-						        timeZone: 'America/Toronto', // Ottawa shares this timezone
-						        hour: '2-digit',
-						        minute: '2-digit',
-						        second: '2-digit',
-						        weekday: 'long',
-						        year: 'numeric',
-						        month: 'long',
-						        day: 'numeric'
-						    };
-						    const ottawaTime = new Intl.DateTimeFormat('en-CA', options).format(new Date());
-						    document.getElementById('ottawa-time').textContent = "Current time in Ottawa: " + ottawaTime;
-						}
-						
-						setInterval(updateOttawaTime, 1000);
-						updateOttawaTime();
-						</script>
+							<script>
+							function updateOttawaTime() {
+							    const options = {
+							        timeZone: 'America/Toronto', // Ottawa timezone
+							        hour: '2-digit',
+							        minute: '2-digit',
+							        second: '2-digit'
+							    };
+							    const ottawaTime = new Intl.DateTimeFormat('en-CA', options).format(new Date());
+							    document.getElementById('ottawa-time').textContent = "Current time in Ottawa: " + ottawaTime;
+							}
+							
+							setInterval(updateOttawaTime, 1000);
+							updateOttawaTime();
+							</script>
 			</div>
 
 		<!-- BG -->
@@ -373,6 +369,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
