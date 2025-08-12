@@ -334,12 +334,31 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 							</article>
 
 					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<p class="copyright">just take one step everyday.</p>
-					</footer>
-
+						<!-- Footer -->
+						<footer id="footer">
+						    <p class="copyright">just take one step everyday.</p>
+						    <p id="ottawa-time" style="margin-top:5px; font-size: 1em; color: #ccc;"></p>
+						</footer>
+						
+						<script>
+						function updateOttawaTime() {
+						    const options = {
+						        timeZone: 'America/Toronto', // Ottawa shares this timezone
+						        hour: '2-digit',
+						        minute: '2-digit',
+						        second: '2-digit',
+						        weekday: 'long',
+						        year: 'numeric',
+						        month: 'long',
+						        day: 'numeric'
+						    };
+						    const ottawaTime = new Intl.DateTimeFormat('en-CA', options).format(new Date());
+						    document.getElementById('ottawa-time').textContent = "Current time in Ottawa: " + ottawaTime;
+						}
+						
+						setInterval(updateOttawaTime, 1000);
+						updateOttawaTime();
+						</script>
 			</div>
 
 		<!-- BG -->
@@ -354,6 +373,7 @@ print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
 
 	</body>
 </html>
+
 
 
 
