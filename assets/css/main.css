@@ -1633,7 +1633,7 @@ input, select, textarea {
 		#footer .copyright {
 			letter-spacing: 0.2rem;
 			font-size: 0.6rem;
-			opacity: 0.75;
+			opacity: 0.9;
 			margin-bottom: 0;
 			text-transform: uppercase;
 		}
@@ -1653,3 +1653,4 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
