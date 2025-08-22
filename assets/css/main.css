@@ -106,7 +106,7 @@ input, select, textarea {
 /* Type */
 
 	html {
-		font-size: 4pt;
+		font-size: 16pt;
 	}
 
 		@media screen and (max-width: 1680px) {
@@ -1653,6 +1653,11 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
+p {
+  font-size: 13px; 
+}
+
 
 
 
