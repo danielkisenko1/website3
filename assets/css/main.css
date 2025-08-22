@@ -106,13 +106,13 @@ input, select, textarea {
 /* Type */
 
 	html {
-		font-size: 14pt;
+		font-size: 4pt;
 	}
 
 		@media screen and (max-width: 1680px) {
 
 			html {
-				font-size: 10pt;
+				font-size: 12pt;
 			}
 
 		}
@@ -120,7 +120,7 @@ input, select, textarea {
 		@media screen and (max-width: 736px) {
 
 			html {
-				font-size: 19pt;
+				font-size: 11pt;
 			}
 
 		}
@@ -128,7 +128,7 @@ input, select, textarea {
 		@media screen and (max-width: 360px) {
 
 			html {
-				font-size: 18pt;
+				font-size: 10pt;
 			}
 
 		}
@@ -1653,5 +1653,6 @@ input, select, textarea {
 		body.is-preload #footer {
 			opacity: 0;
 		}
+
 
 
